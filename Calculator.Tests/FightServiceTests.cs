@@ -167,7 +167,6 @@ public class FightServiceTests
         Assert.Equal(100, character.XP);
         Assert.Equal(2, character.Level);
     }
-    /*
 
     [Fact]
     public void Fight_CharacterDies_WhenMonsterWins()
@@ -201,5 +200,5 @@ public class FightServiceTests
         Assert.False(result.CharacterWon);
         Assert.Equal(0, result.CharacterHpAfterFight);
         Assert.Equal(1, progress.RemainingQuantity);
-    } */
+    }
 }
