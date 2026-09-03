@@ -1,5 +1,6 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc.Testing;
+using System.Net.Http.Json;
 
 
 namespace Calculator.Tests;
@@ -21,7 +22,7 @@ public class ApiTests
             HttpStatusCode.OK,
             response.StatusCode);
     }
-    /*
+
     [Fact]
     public async Task PostCharacter_ReturnsCreated()
     {
@@ -41,6 +42,7 @@ public class ApiTests
             HttpStatusCode.Created,
             response.StatusCode);
     }
+    /*
     [Fact]
     public async Task PostFight_ReturnsOk()
     {
