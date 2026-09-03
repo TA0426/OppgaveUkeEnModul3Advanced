@@ -42,12 +42,12 @@ public class ApiTests
             HttpStatusCode.Created,
             response.StatusCode);
     }
-    /*
+
     [Fact]
     public async Task PostFight_ReturnsOk()
     {
         // Opprett testdata
         // Send POST /Fight
         // Forvent 200 OK
-    } */
+    }
 }
