@@ -20,11 +20,26 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddScoped<LevelCalculator>();
+builder.Services.AddScoped<FightService>();
+builder.Services.AddScoped<GameService>();
 
+builder.Services.AddDbContext<StoreMonstersContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
 
+builder.Services.AddScoped<IStoreMonstersRepository>(
+    provider => provider.GetRequiredService<StoreMonstersContext>());
+
+builder.Services.AddScoped<IStoreMonstersService, StoreMonstersService>();
+builder.Services.AddTransient<StoreMonsterBuilder>();
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var database = scope.ServiceProvider
+        .GetRequiredService<StoreMonstersContext>();
 
+    database.Database.EnsureCreated();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
