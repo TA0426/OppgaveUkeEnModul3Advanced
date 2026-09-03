@@ -95,42 +95,42 @@ public class UnitTest1
 
         Assert.Equal(50, character.XP);
     }
-    /*
-                 [Fact]
-                 public void Fight_CharacterDies_WhenMonsterWins()
-                 {
-                     var character = new StoreCharacter
-                     {
-                         Name = "Anna",
-                         Hp = 10,
-                         Damage = 1,
-                         Level = 1
-                     };
 
-                     var monster = new StoreMonster
-                     {
-                         Name = "Strong Monster",
-                         Hp = 100,
-                         Damage = 20,
-                         XPReward = 50
-                     };
+    [Fact]
+    public void Fight_CharacterDies_WhenMonsterWins()
+    {
+        var character = new StoreCharacter
+        {
+            Name = "Anna",
+            Hp = 10,
+            Damage = 1,
+            Level = 1
+        };
 
-                     var progress = new CharacterMonsterProgress
-                     {
-                         RemainingQuantity = 1
-                     };
+        var monster = new StoreMonster
+        {
+            Name = "Strong Monster",
+            Hp = 100,
+            Damage = 20,
+            XPReward = 50
+        };
 
-                     var fightService = new FightService(
-                         new LevelCalculator());
+        var progress = new CharacterMonsterProgress
+        {
+            RemainingQuantity = 1
+        };
 
-                     var result = fightService.Fight(
-                         character,
-                         monster,
-                         null,
-                         progress);
+        var fightService = new FightService(
+            new LevelCalculator());
 
-                     Assert.False(result.CharacterWon);
-                     Assert.Equal(0, result.CharacterHpAfterFight);
-                     Assert.Equal(1, progress.RemainingQuantity);
-                 } */
+        var result = fightService.Fight(
+            character,
+            monster,
+            null,
+            progress);
+
+        Assert.False(result.CharacterWon);
+        Assert.Equal(0, result.CharacterHpAfterFight);
+        Assert.Equal(1, progress.RemainingQuantity);
+    }
 }
