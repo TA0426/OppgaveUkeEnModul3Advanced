@@ -14,19 +14,13 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.11" />
   </ItemGroup>
+
 <ItemGroup>
   <Compile Remove="ConsoleApp/**/*.cs" />
   <Compile Remove="Calculator/**/*.cs" />
+  <Content Remove="ConsoleApp\**;Calculator.Tests\**" />
   <Compile Remove="Calculator.Tests/**/*.cs" />
-</ItemGroup>
-<ItemGroup>
-  <Compile Remove="ConsoleApp/**/*.cs" />
-  <Compile Remove="Calculator/**/*.cs" />
-  <Compile Remove="Calculator.Tests/**/*.cs" />
-
-
   <Compile Remove="Core/Interfaces/CalculateXP.cs" />
-
   <Compile Remove="Core/Models/Character.cs" />
   <Compile Remove="Core/Models/Monsters.cs" />
   <Compile Remove="Core/Models/Swords.cs" />

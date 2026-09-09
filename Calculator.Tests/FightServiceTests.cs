@@ -129,6 +129,7 @@ public class FightServiceTests
             progress);
 
         Assert.Equal(0, result.MonsterHpAfterFight);
+        Assert.Equal(30, character.Damage);
     }
 
     [Fact]

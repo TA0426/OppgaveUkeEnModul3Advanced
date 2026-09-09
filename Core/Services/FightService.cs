@@ -49,7 +49,7 @@ public class FightService
             battleLog.Add(
                 $"{monster.Name} has {monsterHp} HP left.");
 
-            if (monsterHp <= 0)
+            if (monsterHp == 0) // brukte <= før jeg endret til Math.Max
             {
                 progress.RemainingQuantity--;
 
